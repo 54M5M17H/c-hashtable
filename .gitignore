@@ -5,3 +5,8 @@
 *.i*86
 *.x86_64
 *.hex
+test-hash
+
+# object files
+*.o
+

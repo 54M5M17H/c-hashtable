@@ -7,17 +7,26 @@ int main () {
 	struct timespec time1, time2;
 	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time1);
 	
-	HashMap* hash = createHash(INIT_SIZE);
-	set(hash, "Sam", "Alexander");
-	set(hash, "Joe", "William");
-	set(hash, "Elliott", "James");
-	set(hash, "David", "John");
-	set(hash, "Reggie", "Craig");
-	set(hash, "Colin", "Keith");
-	set(hash, "Anna", "Stephanie");
-	set(hash, "Matt", "Cyl");
-	set(hash, "Sue", "Careless");
-	set(hash, "Alison", "Crisp");
+	HashMap* hash = createHash(INIT_SIZE, 1);
+	hash = set(hash, "Sam", "Alexander");
+	hash = set(hash, "Joe", "William");
+	hash = set(hash, "Elliott", "James");
+	hash = set(hash, "David", "John");
+	hash = set(hash, "Reggie", "Craig");
+	hash = set(hash, "Colin", "Keith");
+	hash = set(hash, "Anna", "Stephanie");
+	hash = set(hash, "Matt", "Cyl");
+	hash = set(hash, "Sue", "Careless");
+	hash = set(hash, "Alison", "Crisp");
+	hash = set(hash, "Arian", "Daniel");
+	hash = set(hash, "Adam", "Welham");
+	hash = set(hash, "Toby", "Charter");
+	hash = set(hash, "Andrew", "Baldwin");
+	hash = set(hash, "James", "Cantwell");
+	hash = set(hash, "Steven", "Knott");
+	hash = set(hash, "Harry", "Worboys");
+	hash = set(hash, "Katie", "Bowler");
+	hash = set(hash, "Nisha", "Gogna");
 
 	char* res = get(hash, "Sam");
 	char* res2 = get(hash, "Elliott");
@@ -29,6 +38,15 @@ int main () {
 	char* res8 = get(hash, "Matt");
 	char* res9 = get(hash, "Sue");
 	char* res10 = get(hash, "Alison");
+	char* res11 = get(hash, "Arian");
+	char* res12 = get(hash, "Adam");
+	char* res13 = get(hash, "Toby");
+	char* res14 = get(hash, "Andrew");
+	char* res15 = get(hash, "James");
+	char* res16 = get(hash, "Steven");
+	char* res17 = get(hash, "Harry");
+	char* res18 = get(hash, "Katie");
+	char* res19 = get(hash, "Nisha");
 
 	clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time2);
 	printf("%.9ld \n", (long)time1.tv_nsec);
@@ -46,4 +64,14 @@ int main () {
 	printf("Matt's middlename is %s \n", res8);
 	printf("Sue's middlename is %s \n", res9);
 	printf("Alison's middlename is %s \n", res10);
+	
+	printf("Arian: %s \n", res11);
+	printf("Adam: %s \n", res12);
+	printf("Toby: %s \n", res13);
+	printf("Andrew: %s \n", res14); 
+	printf("James: %s \n", res15); 
+	printf("Steven: %s \n", res16); 
+	printf("Harry: %s \n", res17); 
+	printf("Katie: %s \n", res18); 
+	printf("Nisha: %s \n", res19); 
 }

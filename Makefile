@@ -6,5 +6,6 @@ OBJ=hashtable.o test.o
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(FLAGS) --std=c99
 
-make-hash: $(OBJ)
+test-hash: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) --std=c99 
+
