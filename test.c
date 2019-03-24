@@ -73,5 +73,13 @@ int main () {
 	printf("Steven: %s \n", res16); 
 	printf("Harry: %s \n", res17); 
 	printf("Katie: %s \n", res18); 
-	printf("Nisha: %s \n", res19); 
+	printf("Nisha: %s \n", res19);
+
+	// test delete
+	deleteKey(hash, "Sam");
+	char* shouldBeNull = get(hash, "Sam");
+	printf("Sam's middlename should now be NULL >> %s \n", shouldBeNull);
+
+	// free hash to clear up
+	freeHash(hash);
 }

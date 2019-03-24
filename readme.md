@@ -19,6 +19,5 @@ Performance changes can be observed by altering the initial length and maximum d
 
 ### TODO
 
-- [] delete key
-- [] delete hash
+- [] refactor
 

@@ -111,3 +111,46 @@ HashMap* rehash(HashMap* oldHash) {
 	free(oldHash);
 	return newHash;
 }
+
+void deleteKey(HashMap *hash, char* key) {
+	int index = doHash(hash->length, key);
+	LinkNode *currNode = hash->data[index];
+	LinkNode *nextNode;
+	if (!currNode) return;
+	if (strcmp(key, currNode->key) == 0) {
+		currNode = currNode->next;
+		free(hash->data[index]);
+		hash->data[index] = currNode;
+		return;
+	}
+
+	while(1) {
+		if (!currNode->next) {
+			return;
+		}
+
+		if (strcmp(currNode->next->key, key) == 0) {
+			nextNode = currNode->next->next;
+			free(currNode->next);
+			currNode->next = nextNode;
+			return;
+		}
+
+		currNode = currNode->next;
+	}
+}
+
+void freeHash(HashMap *hash) {
+	LinkNode* currNode;
+	LinkNode* nextNode;
+	for(int i = 0, l = hash->length; i < l; i++) {
+		currNode = hash->data[i];
+		while(currNode) {
+			nextNode = currNode->next;
+			free(currNode);
+			currNode = nextNode;
+		}
+	}
+	free(hash);
+}
+

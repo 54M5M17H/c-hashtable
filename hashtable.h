@@ -26,4 +26,6 @@ int doHash(int length, char* key);
 char* get (HashMap *hash, char* key);
 HashMap* set(HashMap *hash, char* key, char* value);
 HashMap* rehash(HashMap* oldHash);
+void deleteKey(HashMap *hash, char* key);
+void freeHash(HashMap *hash);
 
